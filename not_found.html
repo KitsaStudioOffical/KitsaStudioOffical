@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>something wierd happend.</title>
+    <style>div{ text-align: center }</style>
+  </head>
+  <body>
+    <div id="center">
+    <h1 id="demo"></h1>
+    <hr>
+    <p>Neocities/latest (Ubuntu)</p>
+    </div>
+    
+    <script>
+var i = 0;
+var txt = 'Error 40+4. Page not found.';
+
+typeWriter(500);
+
+function typeWriter(speed) {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+  </script>
+  </body>
+</html>

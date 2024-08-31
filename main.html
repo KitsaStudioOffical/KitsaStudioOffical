@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KitsaStudio</title>
+  <link rel="stylesheet" href="https://unpkg.com/xp.css">
+  <style>
+    .tabs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px auto;
+    }
+    menu[role="tablist"] {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    button[role="tab"] {
+      margin: 0 5px;
+    }
+    article[role="tabpanel"] {
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+<section class="tabs" style="max-width: 500px">
+  <menu role="tablist" aria-label="Sample Tabs">
+    <button role="tab" aria-selected="true" aria-controls="tab-A" id="tab-button-A">KitsaOS</button>
+    <button role="tab" aria-controls="tab-B" id="tab-button-B">Build2D</button>
+    <button role="tab" aria-controls="tab-C" id="tab-button-C">CorePlay</button>
+  </menu>
+  <!-- the tab content -->
+  <article role="tabpanel" id="tab-A">
+    <p>KitsaOS - A operating system written in C#.</p>
+    <a href="https://kitsaos.neocities.org">KitsaOS</a>
+  </article>
+  <article role="tabpanel" hidden id="tab-B">
+    <a href="/Build2D/changelogs.txt">changelogs.txt</a>
+    <a href="/Build2D">Build2D</a>
+  </article>
+  <article role="tabpanel" hidden id="tab-C">
+    <p>CorePlay - A high technology gaming console.p>
+  </article>
+</section>
+<p>Copyright KitsaStudio 2021-2024</p>
+<script>
+  document.querySelectorAll('button[role="tab"]').forEach(button => {
+    button.addEventListener('click', () => {
+      // Hide all tab panels
+      document.querySelectorAll('article[role="tabpanel"]').forEach(panel => {
+        panel.hidden = true;
+      });
+
+      // Deselect all tabs
+      document.querySelectorAll('button[role="tab"]').forEach(tab => {
+        tab.setAttribute('aria-selected', 'false');
+      });
+
+      // Show the selected tab panel
+      const tabPanel = document.getElementById(button.getAttribute('aria-controls'));
+      tabPanel.hidden = false;
+
+      // Select the clicked tab
+      button.setAttribute('aria-selected', 'true');
+    });
+  });
+</script>
+</body>
+</html>
