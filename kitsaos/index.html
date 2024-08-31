@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KitsaOS</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+            max-width: 800px;
+            width: 100%;
+        }
+        .left {
+            flex-shrink: 0;
+            margin-right: 30px; /* Увеличиваем расстояние между .left и .right */
+            text-align: right;
+        }
+        .logo-img {
+            display: block;
+            width: 200px; /* Уменьшаем ширину логотипа */
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px; /* Добавляем небольшой отступ снизу */
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-weight: bold;
+            font-size: 24px;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+            border: 2px solid white;
+            border-radius: 5px; /* Делаем кнопку закругленной */
+            transition: all 0.3s ease;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .download-btn:hover {
+            background-color: black;
+            color: white;
+        }
+        .right {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .title {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px; /* Уменьшаем расстояние между .title и .description */
+            text-align: left;
+        }
+        .description {
+            font-size: 24px;
+            margin-bottom: 20px; /* Уменьшаем расстояние между .description и .download-btn */
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="right">
+            <div class="title">KitsaOS</div>
+            <div class="description">
+                KitsaOS - операционная система на C#.
+            </div>
+            <a href="https://drive.google.com/file/d/1tM88fQ0ggZ-rf82zrQ0VItdCawPRXraX/view?usp=sharing" class="download-btn">Скачать KitsaOS</a>
+        </div>
+        <div class="left">
+            <img src="https://i.imgur.com/wEwJYgm.png" alt="KitsaOS Logo" class="logo-img">
+        </div>
+    </div>
+</body>
+</html>
